@@ -24,14 +24,14 @@ module.exports = {
 
   deploy: {
     production: {
-      user: 'rshifter',
-      host: '103.76.53.240',
+      user: process.env.USER,
+      host: process.env.HOST,
       ref: 'origin/master',
-      repo: 'git@github.com:RShifter1/web-plus-pm2-deploy.git',
-      path: '/home/rshifter/mesto',
-      // 'pre-deploy': 'scp ./backend/.env rshifter@103.76.53.240:/home/rshifter/mesto/current/backend/.env',
-      'post-deploy': 'cd backend && npm install && cd ../frontend && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build && cd .. && pm2 start ecosystem.config.js || pm2 reload all',
-      'pre-setup': 'echo "Начинаем деплой..."',
+      repo: process.env.REPO,
+      path: process.env.PATH,
+      'pre-setup': 'mkdir -p /home/rshifter/mesto/shared',   
+      'pre-deploy': 'scp ./backend/.env rshifter@103.76.53.240:/home/rshifter/mesto/shared/.env', 
+      'post-deploy': 'cd backend && npm install && cd ../frontend && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build && cd .. && ln -sf /home/rshifter/mesto/shared/.env backend/.env && pm2 start ecosystem.config.js || pm2 reload all'
     },
   },
 };
