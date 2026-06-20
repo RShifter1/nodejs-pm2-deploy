@@ -30,7 +30,8 @@ module.exports = {
       repo: process.env.REPO,
       path: process.env.PATH,
       'pre-setup': 'mkdir -p /home/rshifter/mesto/shared',   
-      // 'pre-deploy': 'echo "Pre-deploy: .env will be copied manually"', 
+      'pre-deploy-local': 'scp ./backend/.env rshifter@103.76.53.240:/home/rshifter/mesto/shared/.env',
+      'pre-deploy': 'true',
       'post-deploy': 'cd backend && npm install && cd ../frontend && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build && cd .. && ln -sf /home/rshifter/mesto/shared/.env backend/.env && pm2 start ecosystem.config.js || pm2 reload all'
     },
   },
