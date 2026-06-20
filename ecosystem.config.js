@@ -27,7 +27,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:RShifter1/web-plus-pm2-deploy.git',
       path: '/home/rshifter/mesto',
-      'post-deploy': 'cd backend && npm install && cd ../frontend && npm install && npm run build && pm2 reload all',
+      'post-deploy': 'cd backend && npm install && cd ../frontend && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build && pm2 reload all',
       'pre-setup': 'echo "Начинаем деплой..."',
     },
   },
