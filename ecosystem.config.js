@@ -28,7 +28,7 @@ module.exports = {
       host: process.env.HOST,
       ref: 'origin/master',
       repo: process.env.REPO,
-      path: process.env.PATH,
+      path: process.env.DEPLOY_PATH,
       'pre-setup': 'mkdir -p /home/rshifter/mesto/shared',   
       'pre-deploy-local': 'scp ./backend/.env rshifter@103.76.53.240:/home/rshifter/mesto/shared/.env',
       'pre-deploy': 'true',
