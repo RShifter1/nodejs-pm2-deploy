@@ -13,8 +13,8 @@ module.exports = {
     },
     {
       name: 'frontend',
-      script: 'npx',
-      args: 'serve -s build -l 3001',
+      script: 'serve',
+      args: '-s build -l 3001',
       cwd: './frontend',
       env: {
         NODE_ENV: 'production',
