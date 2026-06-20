@@ -1,5 +1,5 @@
 import 'dotenv/config';
-
+import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
@@ -11,6 +11,17 @@ import routes from './routes';
 
 const { PORT = 3000 } = process.env;
 const app = express();
+const allowedOrigins = [
+    'http://103.76.53.240',          // фронтенд по IP
+    'http://localhost:3001',         // для локальной разработки
+    'https://student.nomoreparties.co', // позже, когда будет домен
+  ];
+  
+  app.use(cors({
+    origin: allowedOrigins,
+    credentials: true,
+  }));
+  
 mongoose.connect(process.env.MONGODB_URI || DB_ADDRESS);
 
 // Только для локальных тестов. Не используйте это в продакшене
