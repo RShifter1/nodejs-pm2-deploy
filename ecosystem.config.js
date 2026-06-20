@@ -29,7 +29,7 @@ module.exports = {
       ref: 'origin/master',
       repo: process.env.REPO,
       path: process.env.PATH,
-      'pre-deploy': 'scp ./backend/.env rshifter@103.76.53.240:/home/rshifter/mesto/current/backend/.env',
+      // 'pre-deploy': 'scp ./backend/.env rshifter@103.76.53.240:/home/rshifter/mesto/current/backend/.env',
       'post-deploy': 'cd backend && npm install && cd ../frontend && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build && cd .. && pm2 start ecosystem.config.js || pm2 reload all',
       'pre-setup': 'echo "Начинаем деплой..."',
     },
