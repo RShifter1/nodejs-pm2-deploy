@@ -24,11 +24,11 @@ module.exports = {
 
   deploy: {
     production: {
-      user: process.env.USER,
-      host: process.env.HOST,
+      user: 'rshifter',
+      host: '103.76.53.240',
       ref: 'origin/master',
-      repo: process.env.REPO,
-      path: process.env.PATH,
+      repo: 'git@github.com:RShifter1/web-plus-pm2-deploy.git',
+      path: '/home/rshifter/mesto',
       // 'pre-deploy': 'scp ./backend/.env rshifter@103.76.53.240:/home/rshifter/mesto/current/backend/.env',
       'post-deploy': 'cd backend && npm install && cd ../frontend && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build && cd .. && pm2 start ecosystem.config.js || pm2 reload all',
       'pre-setup': 'echo "Начинаем деплой..."',
