@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '.env.deploy' });
+require('dotenv').config({ path: __dirname + '/.env.deploy' });
 
 module.exports = {
   apps: [
@@ -13,8 +13,8 @@ module.exports = {
     },
     {
       name: 'frontend',
-      script: 'serve',
-      args: '-s build -l 3001',
+      script: 'npx',
+      args: 'serve -s build -l 3001',
       cwd: './frontend',
       env: {
         NODE_ENV: 'production',
