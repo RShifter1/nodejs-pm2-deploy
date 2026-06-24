@@ -139,7 +139,7 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('http://103.76.53.240/api');
+  const api = new Api('https://api.rshifter.nomorepartiessite.ru/api');
   
   export default api;
   
