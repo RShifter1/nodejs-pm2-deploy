@@ -12,9 +12,9 @@ import routes from './routes';
 const { PORT = 3000 } = process.env;
 const app = express();
 const allowedOrigins = [
-    'http://103.76.53.240',          // фронтенд по IP
-    'http://localhost:3001',         // для локальной разработки
-    'https://student.nomoreparties.co', // позже, когда будет домен
+    'http://103.76.53.240',          
+    'http://localhost:3001',         
+    'https://rshifter.nomorepartiessite.ru',   
   ];
   
   app.use(cors({
