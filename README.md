@@ -1,5 +1,5 @@
 ## Ссылки на проект
 
-**IP-адрес сервера:** 103.76.53.240
-**Frontend:** http://103.76.53.240
-**Backend:** http://103.76.53.240/api
+- **IP-адрес сервера:** `103.76.53.240`  
+- **Frontend:** [https://rshifter.nomorepartiessite.ru](https://rshifter.nomorepartiessite.ru)  
+- **Backend API:** [https://api.rshifter.nomorepartiessite.ru/api](https://api.rshifter.nomorepartiessite.ru/api)
